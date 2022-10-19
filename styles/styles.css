@@ -212,6 +212,16 @@ body {
   background-color: #FFFFFF;
 }
 
+.control-input {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: black;
+  background-color: #FFFFFF;
+}
+
 .product-card-title {
   font-family: 'PT Sans';
   font-style: normal;
