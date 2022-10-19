@@ -19,8 +19,5 @@
   "css.lint.unknownVendorSpecificProperties": "warning",
   "css.lint.zeroUnits": "error",
   "html.format.endWithNewline": true,
-  "html.format.indentInnerHtml": true,
-  "githubPullRequests.ignoredPullRequestBranches": [
-    "master"
-  ]
+  "html.format.indentInnerHtml": true
 }
