@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
@@ -7,14 +7,22 @@
 }
 
 @font-face {
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -22,18 +30,78 @@ body {
   background-color: #FFFFFF;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .page-header {
   color: #000000;
   background: #FFFFFF;
+  height: 64px;
+}
+
+.navigation {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navigation-user {
+  display: flex;
+  max-width: 268px;
+  margin-left: auto;
+  list-style-type: none;
+
 }
 
 .navigation-link {
+  display: block;
+  padding: 20px 16px;
   font-family: "PT Sans", sans-serif;
   line-height: 22px;
   font-weight: 700;
   color: black;
   background-color: #FFFFFF;
   text-decoration: none;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.navigation-user .navigation-link {
+  min-width: 22px;
+  min-height: 32px;
+}
+
+
+.navigation-logo {
+  width: 138px;
+  margin-right: 30px;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .main-index {
@@ -44,18 +112,53 @@ body {
   background-repeat: no-repeat;
 }
 
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  padding-left: 371px;
+  padding-top: 51px;
+}
+
 .intro {
+  display: flex;
+  justify-content: center;
   font-family: "PT Sans", sans-serif;
   font-size: 30px;
   line-height: 56px;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 0;
   color: black;
   background-color: #FFFFFF;
+  Width: 100%;
+  padding-top: 69px;
 }
 
+.intro-title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .intro-discription {
-  font-family: 'PT Sans';
+  margin: 0 auto;
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -65,42 +168,108 @@ body {
   background-color: #FFFFFF;
 }
 
-.index-colums {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  text-transform: uppercase;
-  color: black;
-  background-color: #FFFFFF;
-
+.advantages-city {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
-.advanages-title {
-  font-family: 'PT Sans';
+.advantages-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #000000;
+  list-style-type: none;
+}
+
+.advantages-item {
+  margin: 0 auto;
+  width: 400px;
+  height: 384px;
+}
+
+.advantages-service {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.advantages-bridge {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  text-align: center;
   text-transform: uppercase;
   color: black;
   background-color: #FFFFFF;
+}
+
+.advantages-title {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  width: 230px;
+  height: 56px;
+  margin-top: 103px;
+  margin-bottom: 62px;
 }
 
 .advantages-discription {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  text-align: center;
   text-transform: none;
   color: #333333;
   background-color: #FFFFFF;
+  width: 230px;
+  margin: o auto;
+  margin-left: 85px;
+  margin-right: 85px;
+}
+
+.advantages-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 px;
+  width: 1200px;
+  list-style-type: none;
+}
+
+.advantages-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 px;
+  width: 1200px;
+  list-style-type: none;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .search-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -112,7 +281,7 @@ body {
 }
 
 .search-discription {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -122,8 +291,14 @@ body {
   background-color: #FFFFFF;
 }
 
+.appointment {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .appointment-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -135,7 +310,7 @@ body {
 }
 
 .appointment-discription {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -145,21 +320,49 @@ body {
   background-color: #FFFFFF;
 }
 
-.page-footer a {
-  color: #000000
+.page-footer-container {
+  display: flex;
+  width: 1200px;
+  height: 120px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.footer-social {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  margin-left: 70px;
+}
+
+.footer-social-item {
+  width: 47px;
+  height: 40px;
 }
 
 .footer-contacts-phone {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans' sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: none;
   color: #333333;
   background-color: #FFFFFF;
+  width: 720px;
+  margin-right: 41px;
+}
+
+.contacts-logo {
+  margin-left: auto;
+  max-width: 115px;
 }
 
 .main-inner {
@@ -171,17 +374,41 @@ body {
 }
 
 .inner-header-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
-  color: black;
-  background-color: #FFFFFF;
+  color: white;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-left: 70px;
+  position: absolute;
+}
+
+.breadcrumbs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-top: 8px;
+  width: 114px;
+  height: 21px;
+  list-style-type: none;
+}
+
+.breadcrumbs-item {
+  padding-right: 32px;
+}
+
+.catalog-filter {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .catalog-filter-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -192,7 +419,7 @@ body {
 }
 
 .catalog-filter-group {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -201,8 +428,32 @@ body {
   background-color: #FFFFFF;
 }
 
+.catalog-right-column {
+  width: 100%;
+}
+
+.sorting-container {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.catalog-products {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: o auto;
+  margin-top: 40px;
+}
+
+.product-card-link {
+  margin: 0 auto;
+  width: 340px;
+  height: 438px;
+}
+
 .catalog-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -210,10 +461,12 @@ body {
   text-transform: uppercase;
   color: black;
   background-color: #FFFFFF;
+  margin: 0 auto;
+  margin-left: 0;
 }
 
 .control-input {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -222,8 +475,13 @@ body {
   background-color: #FFFFFF;
 }
 
+.product-cards {
+  margin: 0 auto;
+  list-style-type: none;
+}
+
 .product-card-title {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -233,7 +491,7 @@ body {
 }
 
 .product-card-price {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -243,8 +501,27 @@ body {
   background-color: #FFFFFF;
 }
 
+.appointment {
+  display: flex;
+  flex-direction: column;
+  width: 1200px
+}
+
+.appointment-title {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  background-color: #FFFFFF;
+  margin: o auto;
+}
+
 .appointment-discription {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -252,18 +529,57 @@ body {
   text-align: center;
   color: black;
   background-color: #FFFFFF;
+  margin: o auto;
 }
 
-.pagination {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 36px;
+.pagination-container {
   display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  color: black;
-  background-color: #FFFFFF;
+  margin: 0;
+  padding: o;
+}
+
+
+.pagination {
+  display: flex;
+  margin-top: 80px;
+  margin-left: 0;
+}
+
+.pagination-item {
+  margin-left: 0 px;
+  margin-right: 8px;
+  width: 60px;
+  height: 60px;
+  list-style-type: none;
+
+}
+
+.pagination-link {
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 44px;
+  padding: 14px 20px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #82B3D3;
+  text-decoration: none;
+}
+
+.pagination-clear {
+  background-color: transparent;
+}
+
+.pagination-current {
+  color: #ffffff;
+  background-color: #82B3D3;
+}
+
+.pagination-disabled {
+  background-color: #F2F2F2;
+}
+
+.pagination-show-more {
+margin-left: auto;
 }
